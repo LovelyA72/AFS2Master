@@ -13,7 +13,7 @@ namespace afs2master
             int startIndex = -1;
             if (args.Length != 1) {
                 Console.WriteLine("AFS2M@STER: Starlit Season v0.5");
-                Console.WriteLine("Copyright (c)2021 LovelyA72 - licensed under the MIT license");
+                Console.WriteLine("Copyright 2021 LovelyA72 - licensed under the MIT license");
                 Console.WriteLine("Simple cuesheet AFS2 stripper");
                 Console.WriteLine("");
                 Console.WriteLine("Usage: afs2master <file_in>");
