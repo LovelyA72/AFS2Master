@@ -6,7 +6,7 @@ namespace afs2master
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
             byte[] fileBytes = { };
             List<Byte> outBytes = new List<byte>();
@@ -17,7 +17,7 @@ namespace afs2master
                 Console.WriteLine("Simple cuesheet AFS2 stripper");
                 Console.WriteLine("");
                 Console.WriteLine("Usage: afs2master <file_in>");
-                return;
+                return 0;
             }
             fileBytes = File.ReadAllBytes(args[0]);
             for (int i = 0; i < fileBytes.Length-5; i++)
@@ -38,9 +38,11 @@ namespace afs2master
                     outBytes.Add(fileBytes[i]);
                 }
                 File.WriteAllBytes(args[0] + ".awb", outBytes.ToArray());
+                return 0;
             }
             else {
                 Console.WriteLine("AFS2 header not found! Is this a valid Starlit Season cue sheet that includes an AFS2 file?");
+                return 2;
             }
         }
     }
